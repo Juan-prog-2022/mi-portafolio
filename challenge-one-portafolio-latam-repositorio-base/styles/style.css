@@ -39,94 +39,515 @@ con una interfaz de usuario compleja, y permite la reutilización del código ex
 Enlace de la documentación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
-/*Sección Menu*/
 
-section.menu{
 
+/* Sección Menu */
+
+.menu {
+    display: flex;
+    justify-content: space-between; /* Centra el contenido */
+    align-items: center;
+    background-color: #3223a5; /* Color de fondo del menú */
+    width: 100%;
+    white-space: nowrap;
+    position: fixed;
+    padding: 5px;
+    top: 0;
 }
 
-/*Sección Title*/
-
-section.title{
-
+.menu__list{
+    display: flex;
+    margin-right: 20px;
+    gap: 15px;
 }
 
-/*Sección About*/
-
-section.about{
-
+.menu__list__item:nth-child(1),
+.menu__list__item:nth-child(2),
+.menu__list__item:nth-child(3),
+.menu__list__item:nth-child(4),
+.menu__list__item:nth-child(5){
+    display: none;
 }
 
-/*Sección Hobbies*/
+.menu__icon {
+    display: flex;
+    width: 40px;
+}
 
-section.hobbies{
+.menu__icon img {
+    width: 45px; /* Ancho de la imagen del logo */
+    height: 30px;
+    padding-top: 5px;
+    margin-left: 5px;
+}
+
+ 
+.menu__title {
+    color: #ffffff; /* Color del texto del título */
+    font-size: 15px; /* Tamaño del texto del título */
+    padding-left: 10px;
+}
+
+.menu__list__item a {
+    display: inline-block; /* Para que el enlace se comporte como un bloque */
+    padding: 7px 5px; /* Ajusta el relleno según sea necesario */
+    border: 1px solid #ffffff; /* Añade un borde */
+    border-radius: 5px; /* Da esquinas redondeadas */
+    transition: all 0.3s ease; /* Agrega una transición suave */
+    color: #ffffff; /* Color del texto */
+}
+
+.menu__list__item a:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
+    border-color: #758414; /* Cambia el color del borde al hacer hover */
+    color: #add33c; /* Cambia el color del texto al hacer hover */
+}
+
+/* Mobile */
+@media (min-width: 429px) {
+
+    /* Menu */
+
+
+    .menu__list__item {
+        display: block;
+    }
     
 }
 
-/* Experiencia Académica*/
 
-section.academic{
 
+/* Sección del Title/Hero */
+
+.title {
+    background-color: #f2f2f2; /* Color de fondo del título */
+    padding: 150px 0; /* Agrega espacio alrededor del contenido */
+    text-align: center; /* Centra el contenido */
 }
 
-/* experiencia*/
-
-section.experience{
-
+.title__div {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    width: 80%;
+    /*background-color: #8c8bd4;*/
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: row-reverse; /* Cambia la dirección principal para mover la imagen hacia la derecha */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    margin: 50px 300px;
 }
 
-/*Contacto*/
-
-section.formcontato{
-
+/* Estilos para la sección del Title/Hero */
+.title__profile {
+    width: 500px; /* Ancho de la imagen de perfil */
+    height: 450px; /* Altura de la imagen de perfil */
+    border-radius: 50%; /* Borde redondeado para hacer la imagen circular */
+    margin-left: 150px; /* Mueve la imagen hacia la derecha */
+    transition: transform 0.3s ease; /* Agrega una transición suave al transformar la imagen */
 }
 
-/*footeer*/
-
-section.footer{
-   
+.title__profile:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% al hacer hover */
 }
+
+
+.title__container {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin-top: 30px; /* Espacio superior entre la imagen y el texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.title__bio {
+    font-size: 24px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior entre los textos */
+}
+
+.title__subsection {
+    font-size: 18px; /* Tamaño del texto */
+    color: #4f4f4f; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior entre los textos */
+}
+
+.title__network {
+    list-style-type: none; /* Quita los estilos de la lista */
+    padding: 50px 0; /* Quita el relleno de la lista */
+}
+
+.title__network__item {
+    display: inline-block; /* Muestra los elementos en línea */
+    margin-right: 10px; /* Espacio a la derecha entre los elementos */
+}
+
+.title__network__item a {
+    color: #333; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+.title__network__item a:hover {
+    color: #007bff; /* Cambia el color del texto al hacer hover */
+}
+
+
+
+
+/*Sección About*/
+
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px; /* Agrega espacio alrededor del contenido */
+    background-color: #8c8bd4; /* Color de fondo */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.about__container {
+    
+    max-width: 600px; /* Ancho máximo del contenido */
+    margin: 20px 420px; /* Centra el contenido horizontalmente */
+}
+
+.about__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #333; /* Color del título */
+}
+
+.about__paragraph {
+    margin-top: 20px; /* Espacio superior entre los párrafos */
+    font-size: 18px; /* Tamaño del texto */
+    color: #000000; /* Color del texto */
+}
+
+.about__container img {
+    margin-top: 20px; /* Espacio superior entre el texto y la firma */
+    max-width: 200px; /* Ancho máximo de la firma */
+}
+
+
+
+
+/*Skills*/
+
+.skills {
+    text-align: center; /* Centra el contenido */
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+}
+
+.skills__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #000000; /* Color del título */
+}
+
+.skills__line {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    margin-top: 30px; /* Espacio superior entre las filas de habilidades */
+}
+
+.skills__box {
+    width: 180px; /* Ancho inicial de la caja de habilidades */
+    height: 200px;
+    margin: 20px; /* Espacio entre las cajas de habilidades */
+    background-color: #3223a5; /* Color de fondo de la caja de habilidades */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 15px; /* Espacio interno */
+    transition: transform 0.3s; /* Transición suave del tamaño */
+}
+
+.skills__box:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.skills__img {
+    width: 80px; /* Ancho de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.skills__name {
+    margin-top: 10px; /* Espacio entre la imagen y el nombre de la habilidad */
+    font-size: 18px; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+}
+
+
+
+/*Sección Hobbies*/
+
+.hobbies {
+    text-align: center; /* Centra el contenido */
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+}
+
+.hobbies__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #000000; /* Color del título */
+}
+
+.hobbies__line {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    margin-top: 30px; /* Espacio superior entre las filas de hobbies */
+}
+
+.hobbies__box {
+    width: 180px; /* Ancho inicial de la caja de hobbies */
+    height: 200px;
+    margin: 20px; /* Espacio entre las cajas de hobbies */
+    background-color: #3223a5; /* Color de fondo de la caja de hobbies */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 15px; /* Espacio interno */
+    transition: transform 0.3s; /* Transición suave del tamaño */
+}
+
+.hobbies__box:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.hobbies__img {
+    width: 80px; /* Ancho de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.hobbies__name {
+    margin-top: 10px; /* Espacio entre la imagen y el nombre del hobby */
+    font-size: 18px; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+}
+
+
+/* Sección de Formación académica */
+
+.academic {
+    text-align: center; /* Centra el contenido */
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+    background-color: #8c8bd4;
+}
+
+.academic__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #333; /* Color del título */
+}
+
+.academic__courses {
+    display: flex; /* Utiliza flexbox para alinear los cursos */
+    justify-content: center; /* Centra los cursos horizontalmente */
+    flex-wrap: wrap; /* Permite que los cursos se envuelvan en varias líneas si es necesario */
+    margin-top: 30px; /* Espacio superior entre los cursos */
+}
+
+.academic__courses__box {
+    width: 250px; /* Ancho de la caja de curso */
+    margin: 20px; /* Espacio entre las cajas de curso */
+    background-color: #f2f2f2; /* Color de fondo de la caja de curso */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.academic__courses__list {
+    list-style-type: none; /* Elimina los marcadores de lista */
+    padding: 0; /* Elimina el relleno de la lista */
+}
+
+.academic__courses__item__img {
+    margin-bottom: 15px; /* Espacio inferior entre la imagen y el título */
+}
+
+.academic__courses__item__title {
+    margin-bottom: 10px; /* Espacio inferior entre el título y el subtítulo */
+}
+
+.academic__courses__item__subtitle {
+    font-style: italic; /* Estilo de texto en cursiva para el subtítulo */
+}
+
+
+
+/* Sección de Experiencia Profesional/Proyectos */
+
+.experience {
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+}
+
+.experience__section__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #333; /* Color del título */
+    text-align: center; /* Centra el título */
+    margin-bottom: 30px; /* Espacio inferior entre el título y los proyectos */
+}
+
+.experience__box {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 30px; /* Espacio inferior entre los proyectos */
+}
+
+.experience__img {
+    width: 200px; /* Ancho de la imagen */
+    height: auto; /* Altura automática */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+}
+
+.experience__info {
+    flex: 1; /* Toma el 100% del espacio disponible */
+}
+
+.experience__title {
+    font-size: 24px; /* Tamaño del título del proyecto */
+    color: #333; /* Color del título del proyecto */
+}
+
+.experience__text {
+    margin-top: 5px; /* Espacio superior entre el título y el texto */
+    font-size: 18px; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+}
+
+.experience__description {
+    margin-top: 10px; /* Espacio superior entre el texto y los botones */
+    display: flex; /* Utiliza flexbox para alinear los botones */
+}
+
+.experience__repo,
+.experience__demo {
+    margin-right: 10px; /* Espacio entre los botones */
+}
+
+.experience__botao--repo,
+.experience__botao--demo {
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+}
+
+.experience__botao--repo {
+    background-color: #3223a5; /* Color de fondo del botón de repositorio */
+    color: #fff; /* Color del texto del botón de repositorio */
+}
+
+.experience__botao--demo {
+    background-color: #007bff; /* Color de fondo del botón de demo */
+    color: #fff; /* Color del texto del botón de demo */
+}
+
+
+
+
+/* Sección de Contacto */
+
+.formcontato {
+    text-align: center; /* Centra el contenido */
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+}
+
+.formcontato__contacto {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.formcontato--esquerda {
+    flex: 1; /* Toma el 50% del espacio disponible */
+}
+
+.formcontato__img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.formcontato__text {
+    flex: 1; /* Toma el 50% del espacio disponible */
+    padding: 0 20px; /* Agrega espacio interno a los lados */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.formcontato__title {
+    font-size: 32px; /* Tamaño del título */
+    color: #333; /* Color del título */
+}
+
+.formcontato__subtext {
+    margin-top: 10px; /* Espacio superior entre los textos */
+    font-size: 18px; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+}
+
+.formcontato__form {
+    margin-top: 20px; /* Espacio superior entre el texto y el formulario */
+}
+
+.formcontato__input,
+.formcontato__textarea,
+.formcontato__botao {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-top: 10px; /* Espacio superior entre los elementos */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 5px; /* Borde redondeado */
+}
+
+.formcontato__textarea {
+    resize: none; /* Evita que el usuario pueda cambiar el tamaño del área de texto */
+}
+
+.formcontato__botao {
+    background-color: #3223a5; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.formcontato__botao:hover {
+    background-color: #007bff; /* Cambia el color de fondo del botón al hacer hover */
+}
+
+
+
+/* Sección de Footer */
+
+.footer {
+    background-color: #0b0b0b; /* Color de fondo del footer */
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+}
+
+.footer__rodape {
+    text-align: center; /* Centra el contenido */
+    color: #1914c4; /* Color del texto */
+}
+
+.footer__rodape p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+}
+
 
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
 
 
+
+
 /*Tablet*/
 @media (min-width: 768px) {
 
-/* Menú */
+    /* Menú */
+    
+    /*title*/
+    
+    /*Skills*/
+    
+    /*Hobbies*/
+    
+    /*Formación Académica*/
+    
+    /*Experiencia Profesional*/
+    
+    }
 
-/*title*/
 
-/*Skills*/
 
-/*Hobbies*/
 
-/*Formación Académica*/
 
-/*Experiencia Profesional*/
 
-}
 
-/*Mobile*/
-@media (min-width: 425px) {
-
-/*Menu*/
-
-/*Titulo*/
-
-/*Sección sobre mi*/
-
-/*Skills*/
-
-/*Hobbies*/
- 
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-
- /*Contacto*/
-
-/*Footer*/
-
-}

@@ -5,52 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Referencia de la hoja de estilo de Css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Fonte del Proyecto Raleway -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<HASH>" crossorigin="anonymous" />
     <title> Mi Portafolio</title>
 </head>
 <body>
     <!-- Sección del Menú  -->
-    <div class="tudo">
     <section class="menu">
-        <header class="menu__header">
-            <img src="assets\vector.png">
-            <h3 class="menu__title">Fulana de Tal</h3>
+        <header class="menu__icon">
+            <img src="assets/vector.png" alt="Logo">
+            <h3 class="menu__title">Quiroz Juan Carlos</h3>
         </header>
-        <nav>
+        <nav class="menu__links">
             <ul class="menu__list">
-                <li class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
+                <li class="menu__list__item"><a href="#sobre-mi">Sobre mí</a></li>
                 <li class="menu__list__item"><a href="#skills">Skills</a></li>
                 <li class="menu__list__item"><a href="#hobbies">Hobbies</a></li>
                 <li class="menu__list__item"><a href="#formacion">Formación</a></li>
                 <li class="menu__list__item"><a href="#xp">Proyectos</a></li>
-                <li class="menu__list__item"><a href="#contacto">Contacto@fulana.com</a></li>
+                <li class="menu__list__item"><a href="#contacto">Contacto</a></li>
             </ul>
-            <li class="menu__list__item__contato"><a href="#contacto">contacto@fulana.com</a></li>
         </nav>
     </section>
-
-    <!-- Sección del Header/Title/Hero -->
+    
+    <!-- Sección del Title/Hero -->
     <section class="title">
         <div class="title__div">
-            <img class="title__profile" src="assets\profile.png">
+            <img class="title__profile" src="assets/IMG-20221109-WA0006.jpg">
             <div class="title__container">
-                <h2 class="title__bio">Hola, mi nombre es Fulana de Tal y construyo paginas web</h2>
-                <h3 class="title__subsection">Soy formada en .... lorem ipsum sit amet consectetur y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</h3>
+                <h2 class="title__bio">Hola, mi nombre es Juan. Soy Programador Java</h2>
+                <h3 class="title__subsection">Soy formado en Universidad de San Luis - Argentina  y  actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</h3>
                 <ul class="title__network">
-                     <!-- Pon los enlaces de tus redes sociales favoritas -->
-                    <li class="title__network__item"><a href="">Github <img src="assets\arrow.png"> </a></li>
-                    <li class="title__network__item"><a href="">Linkedin <img src="assets\arrow.png"></a></li>
-                    <li class="title__network__item"><a href="">Instagram <img src="assets\arrow.png"></a></li>
-                    <li class="title__network__item"><a href="">Currículo <img src="assets\arrow.png"></a></li>
+                     <li class="title__network__item"><a href="#"><i class="fab fa-github"></i> Github</a></li>
+                     <li class="title__network__item"><a href="#"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+                     <li class="title__network__item"><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                     <li class="title__network__item"><a href=""><i class="fas fa-address-card"></i> Currículo</a></li>                     
                 </ul>
             </div>
         </div>
     </section>
-    
+
     <!-- Sección sobre mi -->
     <section class="about" id="sobre-mi">
         <div class="about__container">
@@ -158,7 +157,7 @@
         </div>
     </section>
 
-        <!-- Sección de Formación académica -->
+    <!-- Sección de Formación académica -->
     <section class="academic" id="formacion">
         <h2 class="academic__title" >Formación académica</h2>
         <div class="academic__courses">
@@ -204,8 +203,7 @@
                             <span class="experience__demo"><a href=""><button class="experience__botao--demo">Ver demo</button></a></span>
                     </div>
             </div>
-        </div>  
-
+        </div> 
         <div class="experiencie__box">
             <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
             <img class="experience__img" src="assets\forca_print.png">
@@ -219,7 +217,6 @@
                     </div>
             </div>
         </div>  
-
         <div class="experience__box">
             <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
             <img class="experience__img" src="assets\secretcode_print.png">
@@ -232,8 +229,7 @@
                             <span class="experience__demo"><a href=""><button class="experience__botao--demo">Ver demo</button></a></span>
                     </div>
             </div>
-        </div>  
-
+        </div> 
         <div class="experience__box">
             <img class="experience__img" src="assets\forca2_print.png">
             <div class="experience__info-container"
@@ -244,11 +240,12 @@
                             <span class="experience__repo"><a href="https://github.com/alura-challenges/challenge-one-juego-ahorcado"><button class="experiencia__botao--repo">Repositório</button></a></span>
                             <span class="experience__demo"><a href=""><button class="experience__botao--demo">Ver demo</button></a></span>
                     </div>
-        </div>
+            </div>
         </div>  
+    </section>
 
-        <!-- Sección de Contacto -->
-        <section class="formcontato" id="contacto">
+     <!-- Sección de Contacto -->
+     <section class="formcontato" id="contacto">
             <div  class="formcontato__contacto">
                 <div class="formcontato--esquerda">
                     <img class="formcontato__img" src="assets\contact_image.png">
@@ -266,17 +263,16 @@
                     </form>
                 </div>
             </div>
-        </section>
+     </section>
 
-        <!-- Sección de Footer -->
-        <section class="footer">
+    <!-- Sección de Footer -->
+    <section class="footer">
             <div class="footer__rodape">
-                <p>Desarrollado por Fulana de Tal</p>
-                <p>2022</p>
+                <p>Desarrollado por Quiroz Juan</p>
+                <p>2024</p>
             </div>
-        </section>
-    </div>
+    </section>
  <!-- Script del documento JavaScript -->
-<script src="validacion.js"></script>
+ <script src="./js/validacion.js"></script>
 </body>
 </html>
