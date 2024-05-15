@@ -4,6 +4,8 @@ en las secciones señaladas */
 /*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
 coloque nas sessões indicadas*/
 
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
 :root{
     /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
     /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
@@ -41,513 +43,741 @@ https://en.bem.info/methodology/quick-start/*/
 
 
 
-/* Sección Menu */
+html{
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
 
-.menu {
-    display: flex;
-    justify-content: space-between; /* Centra el contenido */
-    align-items: center;
-    background-color: #3223a5; /* Color de fondo del menú */
-    width: 100%;
-    white-space: nowrap;
+/* MENU */
+
+.contenedor-header{
+    background: #1e2326;
     position: fixed;
-    padding: 5px;
+    width: 100%;
     top: 0;
+    left: 0;
+    z-index: 99;
 }
 
-.menu__list{
+.contenedor-header header{
+    max-width: 1100px;
+    margin: auto;
     display: flex;
-    margin-right: 20px;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-.menu__list__item:nth-child(1),
-.menu__list__item:nth-child(2),
-.menu__list__item:nth-child(3),
-.menu__list__item:nth-child(4),
-.menu__list__item:nth-child(5){
+.contenedor-header header .logo a{
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: #1CB698;
+    text-decoration: none;
+} 
+
+.contenedor-header header ul{
+    display: flex;
+    list-style: none;
+}
+
+.contenedor-header header nav ul li a{
+    text-align: none;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.contenedor-header header nav ul li a:hover{
+    color: #1CB698;
+}
+
+.nav-responsive{
+    background-color: #1CB698;
+    color:#fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
     display: none;
 }
 
-.menu__icon {
+/* SECCION I N I C I O */
+
+.inicio{
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url('../assets/fondo.jpg');
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
     display: flex;
-    width: 40px;
+    align-items: center;
 }
 
-.menu__icon img {
-    width: 45px; /* Ancho de la imagen del logo */
-    height: 30px;
-    padding-top: 5px;
-    margin-left: 5px;
+.inicio .contenido-banner{
+    padding: 20px;
+    background-color: #1e2326;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
 }
 
- 
-.menu__title {
-    color: #ffffff; /* Color del texto del título */
-    font-size: 15px; /* Tamaño del texto del título */
-    padding-left: 10px;
-}
-
-.menu__list__item a {
-    display: inline-block; /* Para que el enlace se comporte como un bloque */
-    padding: 7px 5px; /* Ajusta el relleno según sea necesario */
-    border: 1px solid #ffffff; /* Añade un borde */
-    border-radius: 5px; /* Da esquinas redondeadas */
-    transition: all 0.3s ease; /* Agrega una transición suave */
-    color: #ffffff; /* Color del texto */
-}
-
-.menu__list__item a:hover {
-    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
-    border-color: #758414; /* Cambia el color del borde al hacer hover */
-    color: #add33c; /* Cambia el color del texto al hacer hover */
-}
-
-/* Mobile */
-@media (min-width: 429px) {
-
-    /* Menu */
-
-
-    .menu__list__item {
-        display: block;
-    }
-    
-}
-
-
-
-/* Sección del Title/Hero */
-
-.title {
-    background-color: #f2f2f2; /* Color de fondo del título */
-    padding: 150px 0; /* Agrega espacio alrededor del contenido */
-    text-align: center; /* Centra el contenido */
-}
-
-.title__div {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
+.inicio .contenido-banner img{
+    margin-top: 40px;
+    border: 10px solid #1CB698;
+    display: block;
     width: 80%;
-    /*background-color: #8c8bd4;*/
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    flex-direction: row-reverse; /* Cambia la dirección principal para mover la imagen hacia la derecha */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
-    margin: 50px 300px;
+    margin: auto;
+    border-radius: 100%;
 }
 
-/* Estilos para la sección del Title/Hero */
-.title__profile {
-    width: 500px; /* Ancho de la imagen de perfil */
-    height: 450px; /* Altura de la imagen de perfil */
-    border-radius: 50%; /* Borde redondeado para hacer la imagen circular */
-    margin-left: 150px; /* Mueve la imagen hacia la derecha */
-    transition: transform 0.3s ease; /* Agrega una transición suave al transformar la imagen */
+.inicio .contenido-banner h1{
+    margin-top: 40px;
+    font-size: 42px;
+    font-family: 'Righteous';
 }
 
-.title__profile:hover {
-    transform: scale(1.1); /* Escala la imagen al 110% al hacer hover */
+.inicio .contenido-banner h2{
+    font-size: 15px;
+    font-weight: normal;
 }
 
-
-.title__container {
-    max-width: 600px; /* Ancho máximo del contenedor */
-    margin-top: 30px; /* Espacio superior entre la imagen y el texto */
-    text-align: left; /* Alinea el texto a la izquierda */
+.inicio .contenido-banner .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
 }
 
-.title__bio {
-    font-size: 24px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
-    margin-bottom: 20px; /* Espacio inferior entre los textos */
-}
-
-.title__subsection {
-    font-size: 18px; /* Tamaño del texto */
-    color: #4f4f4f; /* Color del texto */
-    margin-bottom: 20px; /* Espacio inferior entre los textos */
-}
-
-.title__network {
-    list-style-type: none; /* Quita los estilos de la lista */
-    padding: 50px 0; /* Quita el relleno de la lista */
-}
-
-.title__network__item {
-    display: inline-block; /* Muestra los elementos en línea */
-    margin-right: 10px; /* Espacio a la derecha entre los elementos */
-}
-
-.title__network__item a {
-    color: #333; /* Color del texto de los enlaces */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    font-size: 18px; /* Tamaño del texto */
-}
-
-.title__network__item a:hover {
-    color: #007bff; /* Cambia el color del texto al hacer hover */
+.inicio .contenido-banner .redes a:hover{
+    background-color: #1CB698;
 }
 
 
+/* SECCION SOBRE MI */
 
+.sobremi{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
 
-/*Sección About*/
+.sobremi .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
 
+.sobremi h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
 
-.about {
+}
+
+.sobremi .contenido-seccion p{
+    font: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+.sobremi .contenido-seccion p span{
+    color: #1CB698;
+    font-weight: bold;
+}
+
+.sobremi .fila{
     display: flex;
-    justify-content: space-between;
-    padding: 20px; /* Agrega espacio alrededor del contenido */
-    background-color: #8c8bd4; /* Color de fondo */
-    text-align: left; /* Alineación a la izquierda */
 }
 
-.about__container {
-    
-    max-width: 600px; /* Ancho máximo del contenido */
-    margin: 20px 420px; /* Centra el contenido horizontalmente */
+.sobremi .fila .col {
+    width: 50%;
 }
 
-.about__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #333; /* Color del título */
+.sobremi .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
 }
 
-.about__paragraph {
-    margin-top: 20px; /* Espacio superior entre los párrafos */
-    font-size: 18px; /* Tamaño del texto */
-    color: #000000; /* Color del texto */
+.sobremi .fila .col ul{
+    list-style: none;
 }
 
-.about__container img {
-    margin-top: 20px; /* Espacio superior entre el texto y la firma */
-    max-width: 200px; /* Ancho máximo de la firma */
+.sobremi .fila .col ul li{
+    margin: 12px 0;
+}
+
+.sobremi .fila .col ul li strong{
+    display: inline-block;
+    color: #1CB698;
+    width: 130px;
+}
+
+.sobremi .fila .col ul li span{
+    background-color: #1CB698;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.sobremi .fila .col .contenedor-intereses{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sobremi .fila .col .contenedor-intereses .interes{
+    width: 100px;
+    height: 100px;
+    background-color: #252A2E;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.sobremi .fila .col .contenedor-intereses .interes:hover{
+    background-color: #1CB698;
+}
+
+.sobremi .fila .col .contenedor-intereses .interes i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.sobremi button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.sobremi button a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita subrayado del enlace */
+}
+
+.sobremi button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1CB698;
+    z-index: -1;
+    transition: 1s;
+}
+
+.sobremi button:hover .overlay {
+    width: 100%;
 }
 
 
 
-
-/*Skills*/
+/* SECCION S K I L L S */
 
 .skills {
-    text-align: center; /* Centra el contenido */
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)), url('../assets/fondo-habilidades.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 50px 0; /* Ajusta el espacio interior según sea necesario */
 }
 
-.skills__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #000000; /* Color del título */
+.skills .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.skills h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+
 }
 
-.skills__line {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
+.skills .fila{
+    display: flex;
+}
+.skills .fila .col{
+    width: 50%;
+    padding: 0 20px;
+}
+
+.fila {
+    display: flex;
     justify-content: center; /* Centra los elementos horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
-    margin-top: 30px; /* Espacio superior entre las filas de habilidades */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a una nueva línea */
+    margin-top: 30px; /* Agrega un poco de espacio entre la fila y el título */
 }
 
-.skills__box {
-    width: 180px; /* Ancho inicial de la caja de habilidades */
-    height: 200px;
-    margin: 20px; /* Espacio entre las cajas de habilidades */
-    background-color: #3223a5; /* Color de fondo de la caja de habilidades */
-    border-radius: 10px; /* Borde redondeado */
-    padding: 15px; /* Espacio interno */
-    transition: transform 0.3s; /* Transición suave del tamaño */
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Distribuye uniformemente el espacio entre las habilidades */
 }
 
-.skills__box:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+.habilidad {
+    width: 150px;
+    height: 150px;
+    background-color: #252A2E;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
 }
 
-.skills__img {
-    width: 80px; /* Ancho de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+.habilidad:hover {
+    background-color: #1CB698;
 }
 
-.skills__name {
-    margin-top: 10px; /* Espacio entre la imagen y el nombre de la habilidad */
-    font-size: 18px; /* Tamaño del texto */
-    color: #ffffff; /* Color del texto */
-}
-
-
-
-/*Sección Hobbies*/
-
-.hobbies {
-    text-align: center; /* Centra el contenido */
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
-}
-
-.hobbies__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #000000; /* Color del título */
-}
-
-.hobbies__line {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
-    margin-top: 30px; /* Espacio superior entre las filas de hobbies */
-}
-
-.hobbies__box {
-    width: 180px; /* Ancho inicial de la caja de hobbies */
-    height: 200px;
-    margin: 20px; /* Espacio entre las cajas de hobbies */
-    background-color: #3223a5; /* Color de fondo de la caja de hobbies */
-    border-radius: 10px; /* Borde redondeado */
-    padding: 15px; /* Espacio interno */
-    transition: transform 0.3s; /* Transición suave del tamaño */
-}
-
-.hobbies__box:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
-}
-
-.hobbies__img {
-    width: 80px; /* Ancho de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-}
-
-.hobbies__name {
-    margin-top: 10px; /* Espacio entre la imagen y el nombre del hobby */
-    font-size: 18px; /* Tamaño del texto */
-    color: #ffffff; /* Color del texto */
-}
-
-
-/* Sección de Formación académica */
-
-.academic {
-    text-align: center; /* Centra el contenido */
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
-    background-color: #8c8bd4;
-}
-
-.academic__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #333; /* Color del título */
-}
-
-.academic__courses {
-    display: flex; /* Utiliza flexbox para alinear los cursos */
-    justify-content: center; /* Centra los cursos horizontalmente */
-    flex-wrap: wrap; /* Permite que los cursos se envuelvan en varias líneas si es necesario */
-    margin-top: 30px; /* Espacio superior entre los cursos */
-}
-
-.academic__courses__box {
-    width: 250px; /* Ancho de la caja de curso */
-    margin: 20px; /* Espacio entre las cajas de curso */
-    background-color: #f2f2f2; /* Color de fondo de la caja de curso */
-    border-radius: 10px; /* Borde redondeado */
-    padding: 20px; /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.academic__courses__list {
-    list-style-type: none; /* Elimina los marcadores de lista */
-    padding: 0; /* Elimina el relleno de la lista */
-}
-
-.academic__courses__item__img {
-    margin-bottom: 15px; /* Espacio inferior entre la imagen y el título */
-}
-
-.academic__courses__item__title {
-    margin-bottom: 10px; /* Espacio inferior entre el título y el subtítulo */
-}
-
-.academic__courses__item__subtitle {
-    font-style: italic; /* Estilo de texto en cursiva para el subtítulo */
-}
-
-
-
-/* Sección de Experiencia Profesional/Proyectos */
-
-.experience {
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
-}
-
-.experience__section__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #333; /* Color del título */
-    text-align: center; /* Centra el título */
-    margin-bottom: 30px; /* Espacio inferior entre el título y los proyectos */
-}
-
-.experience__box {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    margin-bottom: 30px; /* Espacio inferior entre los proyectos */
-}
-
-.experience__img {
-    width: 200px; /* Ancho de la imagen */
-    height: auto; /* Altura automática */
-    margin-right: 20px; /* Espacio a la derecha de la imagen */
-}
-
-.experience__info {
-    flex: 1; /* Toma el 100% del espacio disponible */
-}
-
-.experience__title {
-    font-size: 24px; /* Tamaño del título del proyecto */
-    color: #333; /* Color del título del proyecto */
-}
-
-.experience__text {
-    margin-top: 5px; /* Espacio superior entre el título y el texto */
-    font-size: 18px; /* Tamaño del texto */
-    color: #666; /* Color del texto */
-}
-
-.experience__description {
-    margin-top: 10px; /* Espacio superior entre el texto y los botones */
-    display: flex; /* Utiliza flexbox para alinear los botones */
-}
-
-.experience__repo,
-.experience__demo {
-    margin-right: 10px; /* Espacio entre los botones */
-}
-
-.experience__botao--repo,
-.experience__botao--demo {
-    padding: 10px 20px; /* Espacio interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Borde redondeado */
-    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
-}
-
-.experience__botao--repo {
-    background-color: #3223a5; /* Color de fondo del botón de repositorio */
-    color: #fff; /* Color del texto del botón de repositorio */
-}
-
-.experience__botao--demo {
-    background-color: #007bff; /* Color de fondo del botón de demo */
-    color: #fff; /* Color del texto del botón de demo */
+.habilidad img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
 
 
 
 
-/* Sección de Contacto */
 
-.formcontato {
-    text-align: center; /* Centra el contenido */
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+/* SECCION CURRICULUM */
+
+.curriculum{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
 }
 
-.formcontato__contacto {
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+.curriculum .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
 }
 
-.formcontato--esquerda {
-    flex: 1; /* Toma el 50% del espacio disponible */
+.curriculum h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+
 }
 
-.formcontato__img {
-    width: 100%; /* Ocupa todo el ancho disponible */
+.curriculum .fila{
+    display: flex;
+    justify-content: space-between;
 }
 
-.formcontato__text {
-    flex: 1; /* Toma el 50% del espacio disponible */
-    padding: 0 20px; /* Agrega espacio interno a los lados */
-    text-align: left; /* Alinea el texto a la izquierda */
+.curriculum .fila .col{
+    width: 49%;
+    padding: 0 20px;
 }
 
-.formcontato__title {
-    font-size: 32px; /* Tamaño del título */
-    color: #333; /* Color del título */
+.curriculum .fila .col h3{
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
 }
 
-.formcontato__subtext {
-    margin-top: 10px; /* Espacio superior entre los textos */
-    font-size: 18px; /* Tamaño del texto */
-    color: #666; /* Color del texto */
+.curriculum .fila .izquierda{
+    border-right: 2px solid #252A2E;
 }
 
-.formcontato__form {
-    margin-top: 20px; /* Espacio superior entre el texto y el formulario */
+.curriculum .fila .derecha{
+    border-left: 2px solid #252A2E;
 }
 
-.formcontato__input,
-.formcontato__textarea,
-.formcontato__botao {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    margin-top: 10px; /* Espacio superior entre los elementos */
-    padding: 10px; /* Espacio interno */
-    border: 1px solid #ccc; /* Borde del campo */
-    border-radius: 5px; /* Borde redondeado */
+.curriculum .fila .item{
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #252A2E;
+    position: relative;
 }
 
-.formcontato__textarea {
-    resize: none; /* Evita que el usuario pueda cambiar el tamaño del área de texto */
+.curriculum .fila .item h4{
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.formcontato__botao {
-    background-color: #3223a5; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+.curriculum .fila .item .casa{
+    color: #1CB698;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
 }
 
-.formcontato__botao:hover {
-    background-color: #007bff; /* Cambia el color de fondo del botón al hacer hover */
+.curriculum .fila .item .fecha{
+    display: block;
+    color: #1CB698;
+    margin-bottom: 10px;
+}
+
+.curriculum .fila .item p{
+    line-height: 24px;
+}
+
+.curriculum .fila .izq{
+    border-right: 2px solid #1CB698;
+    margin-right: 20px;
+}
+
+.curriculum .fila .der{
+    border-left: 2px solid #1CB698;
+    margin-left: 20px;
+}
+
+.curriculum .fila .item .conectori{
+    height: 2px;
+    background-color: #1CB698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    right: -47px;
+    z-index: 5;
+}
+
+.curriculum .fila .item .conectori .circuloi{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #1CB698;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+
+.curriculum .fila .item .conectord{
+    height: 2px;
+    background-color: #1CB698;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    left: -47px;
+    z-index: 5;
+}
+
+.curriculum .fila .item .conectord .circulod{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #1CB698;
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+
+
+/* SECCION PORTFOLIO */
+
+.portfolio{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.portfolio .contenido-seccion{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.portfolio h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos para los cuadros de proyecto */
+.proyecto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #949292;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px; /* Ancho de cada proyecto */
+    transition: box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+}
+
+
+.proyecto img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Garantiza que la imagen no se agrande más allá de su tamaño original */
+    max-height: 200px; /* Establece una altura máxima para todas las imágenes */
+    border-bottom: 1px solid #ccc;
+}
+
+.proyecto-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.proyecto-info h3 {
+    margin-top: 0;
+}
+
+.proyecto-info p {
+    margin-bottom: 10px;
+}
+
+.proyecto-info a {
+    color: #1CB698;
+    text-decoration: none;
+}
+
+.proyecto-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor de proyectos en forma de fila */
+.proyectos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ajusta el espacio entre los proyectos */
 }
 
 
 
-/* Sección de Footer */
+/* SECCION CONTACTO */
 
-.footer {
-    background-color: #0b0b0b; /* Color de fondo del footer */
-    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+.contacto{
+    background-image: url('../assets/contact_bg.png');
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 0;
 }
 
-.footer__rodape {
-    text-align: center; /* Centra el contenido */
-    color: #1914c4; /* Color del texto */
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
 }
 
-.footer__rodape p {
-    margin: 5px 0; /* Espacio entre los párrafos */
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.contacto .fila{
+    display: flex;
+}
+
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1CB698;
+    z-index: -1;
+    transition: 1s;
+}
+
+.contacto button:hover .overlay{
+    width: 100%;
+}
+
+.contacto .col img{
+    width: 100%;
+}
+
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: #252A2E;
+    padding: 20px;
+    max-width: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacto .col .info ul{
+    list-style: none;
+}
+
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+
+.contacto .col .info ul li i{
+    color: #1CB698;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+footer .redes{
+    margin-bottom: 20px;
+}
+
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1CB698;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
 }
 
 
-/* Vamos a desafiarnos trabajando con responsividad?
-Utiliza las referencias de los breakpoints @media abajo */
+/* SECCION RESPONSIVE */
+
+@media screen and (max-width:980px){
+    nav{
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+    nav.responsive ul{
+        display: block !important;
+    }
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    }
+}
 
 
-
-
-/*Tablet*/
-@media (min-width: 768px) {
-
-    /* Menú */
-    
-    /*title*/
-    
-    /*Skills*/
-    
-    /*Hobbies*/
-    
-    /*Formación Académica*/
-    
-    /*Experiencia Profesional*/
-    
+@media screen and (max-width:700px){
+    .sobremi .fila{
+        display: block;
+    }
+    .sobremi .fila .col{
+        width: fit-content;
     }
 
+    .skills .fila{
+        display: block;
+    }
+    .skills .fila .col{
+        width: 100%;
+    }
+    .skills .fila .col .barra-skill{
+        width: 100%;
+    }
 
+    .curriculum .fila{
+        display: block;
+    }
+    .curriculum .fila .col{
+        width: 90%;
+    }
+    .curriculum .fila .derecha{
+        margin-left: 20px;
+    }
 
-
-
-
+    .portfolio .galeria{
+        display: block;
+        width: 100%;
+    }
+    .portfolio .galeria .proyecto{
+        max-width: 100%;
+    }
+    .portfolio .galeria .proyecto img{
+        width: 100%;
+    }
+    .contacto .fila{
+        display: block;
+    }
+    .contacto .fila .col{
+        width: 100%;
+    }
+}
 
